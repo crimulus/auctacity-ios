@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		78D80E891A33C976005282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E881A33C976005282A3 /* main.m */; };
 		78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8B1A33C976005282A3 /* AppDelegate.m */; };
-		78D80E8F1A33C976005282A3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8E1A33C976005282A3 /* FirstViewController.m */; };
-		78D80E921A33C976005282A3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E911A33C976005282A3 /* SecondViewController.m */; };
 		78D80E951A33C976005282A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D80E931A33C976005282A3 /* Main.storyboard */; };
-		78D80E971A33C976005282A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D80E961A33C976005282A3 /* Images.xcassets */; };
 		78D80E9A1A33C976005282A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D80E981A33C976005282A3 /* LaunchScreen.xib */; };
 		78D80EA61A33C976005282A3 /* AuctacityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80EA51A33C976005282A3 /* AuctacityTests.m */; };
+		78E246BC1A8AF85800ED6E0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E246BB1A8AF85800ED6E0E /* Images.xcassets */; };
+		78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78E246B81A8AF6A700ED6E0E /* KaushanScript-Regular-webfont.ttf */; };
+		78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E246C41A8B205800ED6E0E /* AuthViewController.m */; };
+		78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78E246C61A8B266300ED6E0E /* Museo300-Regular.otf */; };
+		78E246C91A8B268F00ED6E0E /* Museo700-Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78E246C71A8B266300ED6E0E /* Museo700-Regular-webfont.ttf */; };
+		78E246CC1A8B39D600ED6E0E /* BottomButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E246CB1A8B39D600ED6E0E /* BottomButtonView.m */; };
+		78E246CE1A8B39F100ED6E0E /* BottomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E246CD1A8B39F100ED6E0E /* BottomButtonView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +37,20 @@
 		78D80E881A33C976005282A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78D80E8A1A33C976005282A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		78D80E8B1A33C976005282A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		78D80E8D1A33C976005282A3 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		78D80E8E1A33C976005282A3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		78D80E901A33C976005282A3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		78D80E911A33C976005282A3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		78D80E941A33C976005282A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78D80E961A33C976005282A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78D80E991A33C976005282A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		78D80E9F1A33C976005282A3 /* AuctacityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuctacityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D80EA41A33C976005282A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D80EA51A33C976005282A3 /* AuctacityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuctacityTests.m; sourceTree = "<group>"; };
+		78E246B81A8AF6A700ED6E0E /* KaushanScript-Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KaushanScript-Regular-webfont.ttf"; path = "../../Desktop/auctacity/KaushanScript-Regular-webfont.ttf"; sourceTree = "<group>"; };
+		78E246BB1A8AF85800ED6E0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		78E246C31A8B205800ED6E0E /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		78E246C41A8B205800ED6E0E /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		78E246C61A8B266300ED6E0E /* Museo300-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo300-Regular.otf"; path = "../../Desktop/auctacity/Museo300-Regular.otf"; sourceTree = "<group>"; };
+		78E246C71A8B266300ED6E0E /* Museo700-Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo700-Regular-webfont.ttf"; path = "../../Desktop/auctacity/Museo700-Regular-webfont.ttf"; sourceTree = "<group>"; };
+		78E246CA1A8B39D600ED6E0E /* BottomButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomButtonView.h; sourceTree = "<group>"; };
+		78E246CB1A8B39D600ED6E0E /* BottomButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomButtonView.m; sourceTree = "<group>"; };
+		78E246CD1A8B39F100ED6E0E /* BottomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomButtonView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +92,17 @@
 		78D80E851A33C976005282A3 /* Auctacity */ = {
 			isa = PBXGroup;
 			children = (
+				78E246B41A8AF62D00ED6E0E /* Fonts */,
+				78E246BB1A8AF85800ED6E0E /* Images.xcassets */,
+				78D80E931A33C976005282A3 /* Main.storyboard */,
+				78D80E981A33C976005282A3 /* LaunchScreen.xib */,
 				78D80E8A1A33C976005282A3 /* AppDelegate.h */,
 				78D80E8B1A33C976005282A3 /* AppDelegate.m */,
-				78D80E8D1A33C976005282A3 /* FirstViewController.h */,
-				78D80E8E1A33C976005282A3 /* FirstViewController.m */,
-				78D80E901A33C976005282A3 /* SecondViewController.h */,
-				78D80E911A33C976005282A3 /* SecondViewController.m */,
-				78D80E931A33C976005282A3 /* Main.storyboard */,
-				78D80E961A33C976005282A3 /* Images.xcassets */,
-				78D80E981A33C976005282A3 /* LaunchScreen.xib */,
+				78E246C31A8B205800ED6E0E /* AuthViewController.h */,
+				78E246C41A8B205800ED6E0E /* AuthViewController.m */,
+				78E246CA1A8B39D600ED6E0E /* BottomButtonView.h */,
+				78E246CB1A8B39D600ED6E0E /* BottomButtonView.m */,
+				78E246CD1A8B39F100ED6E0E /* BottomButtonView.xib */,
 				78D80E861A33C976005282A3 /* Supporting Files */,
 			);
 			path = Auctacity;
@@ -122,6 +132,16 @@
 				78D80EA41A33C976005282A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78E246B41A8AF62D00ED6E0E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				78E246C61A8B266300ED6E0E /* Museo300-Regular.otf */,
+				78E246C71A8B266300ED6E0E /* Museo700-Regular-webfont.ttf */,
+				78E246B81A8AF6A700ED6E0E /* KaushanScript-Regular-webfont.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +224,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */,
+				78E246CE1A8B39F100ED6E0E /* BottomButtonView.xib in Resources */,
+				78E246C91A8B268F00ED6E0E /* Museo700-Regular-webfont.ttf in Resources */,
+				78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */,
 				78D80E951A33C976005282A3 /* Main.storyboard in Resources */,
+				78E246BC1A8AF85800ED6E0E /* Images.xcassets in Resources */,
 				78D80E9A1A33C976005282A3 /* LaunchScreen.xib in Resources */,
-				78D80E971A33C976005282A3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D80E921A33C976005282A3 /* SecondViewController.m in Sources */,
 				78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */,
-				78D80E8F1A33C976005282A3 /* FirstViewController.m in Sources */,
+				78E246CC1A8B39D600ED6E0E /* BottomButtonView.m in Sources */,
+				78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */,
 				78D80E891A33C976005282A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,8 +376,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Auctacity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -362,8 +388,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Auctacity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -420,6 +448,7 @@
 				78D80EAB1A33C976005282A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78D80EAC1A33C976005282A3 /* Build configuration list for PBXNativeTarget "AuctacityTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +457,7 @@
 				78D80EAE1A33C976005282A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

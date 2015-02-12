@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Museo300-Regular.otf">
+            <string>Museo-300</string>
+            <string>Museo-300</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomButtonView">
+            <connections>
+                <outlet property="container" destination="k2t-w5-azt" id="JM8-uh-Pwe"/>
+                <outlet property="leftButton" destination="Ch5-3M-Irp" id="uSL-eP-ivy"/>
+                <outlet property="rightButton" destination="06B-Zm-c9I" id="j5Y-3J-dhm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="k2t-w5-azt">
+            <rect key="frame" x="0.0" y="0.0" width="302" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonals" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-mU-6Hb">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-3M-Irp">
+                    <rect key="frame" x="17" y="16" width="118" height="43"/>
+                    <fontDescription key="fontDescription" name="Museo-300" family="Museo" pointSize="25"/>
+                    <state key="normal" title="Left" backgroundImage="red-button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06B-Zm-c9I">
+                    <rect key="frame" x="164" y="16" width="118" height="43"/>
+                    <fontDescription key="fontDescription" name="Museo-300" family="Museo" pointSize="25"/>
+                    <state key="normal" title="Right" backgroundImage="blue-button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="94" y="477.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blue-button" width="562" height="156"/>
+        <image name="diagonals" width="600" height="150"/>
+        <image name="red-button" width="562" height="156"/>
+    </resources>
+</document>
