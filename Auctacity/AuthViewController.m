@@ -8,7 +8,9 @@
 
 #import "AuthViewController.h"
 
-@interface AuthViewController ()
+@interface AuthViewController () {
+    BOOL loginFormShown;
+}
 
 @end
 
@@ -20,7 +22,7 @@
     
     [self.buttonView.leftButton setTitle:@"Log In" forState:UIControlStateNormal];
     [self.buttonView.leftButton addTarget:self
-                                   action:@selector(showLoginForm)
+                                   action:@selector(toggleLoginForm)
                          forControlEvents:UIControlEventTouchUpInside
      ];
     
@@ -38,33 +40,57 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)showLoginForm {
-    [UIView animateWithDuration:.3 animations:^{
-        self.logo.frame = CGRectMake(
-                                     self.logo.frame.origin.x,
-                                     self.logo.frame.origin.y - 50,
-                                     self.logo.frame.size.width,
-                                     self.logo.frame.size.height
-                                     );
-        self.shinyLip.frame = CGRectMake(
-                                         self.shinyLip.frame.origin.x,
-                                         self.shinyLip.frame.origin.y - 50,
-                                         self.shinyLip.frame.size.width,
-                                         self.shinyLip.frame.size.height
+- (void)toggleLoginForm {
+    if (loginFormShown) {
+        [UIView animateWithDuration:.3 animations:^{
+            self.logo.frame = CGRectMake(
+                                         self.logo.frame.origin.x,
+                                         self.logo.frame.origin.y + 50,
+                                         self.logo.frame.size.width,
+                                         self.logo.frame.size.height
                                          );
-        self.tagLine.frame = CGRectMake(
-                                        self.tagLine.frame.origin.x,
-                                        self.tagLine.frame.origin.y + 300,
-                                        self.tagLine.frame.size.width,
-                                        self.tagLine.frame.size.height
-                                        );
-    } completion:^(BOOL finished){
-    }];
-    [self.buttonView popOut];
-}
-
-- (void)hideLoginForm {
-    
+            self.shinyLip.frame = CGRectMake(
+                                             self.shinyLip.frame.origin.x,
+                                             self.shinyLip.frame.origin.y + 50,
+                                             self.shinyLip.frame.size.width,
+                                             self.shinyLip.frame.size.height
+                                             );
+            self.tagLine.frame = CGRectMake(
+                                            self.tagLine.frame.origin.x,
+                                            self.tagLine.frame.origin.y - 300,
+                                            self.tagLine.frame.size.width,
+                                            self.tagLine.frame.size.height
+                                            );
+        } completion:^(BOOL finished){
+        }];
+        loginFormShown = NO;
+        return;
+    }
+    else {
+        [UIView animateWithDuration:.3 animations:^{
+            self.logo.frame = CGRectMake(
+                                         self.logo.frame.origin.x,
+                                         self.logo.frame.origin.y - 50,
+                                         self.logo.frame.size.width,
+                                         self.logo.frame.size.height
+                                         );
+            self.shinyLip.frame = CGRectMake(
+                                             self.shinyLip.frame.origin.x,
+                                             self.shinyLip.frame.origin.y - 50,
+                                             self.shinyLip.frame.size.width,
+                                             self.shinyLip.frame.size.height
+                                             );
+            self.tagLine.frame = CGRectMake(
+                                            self.tagLine.frame.origin.x,
+                                            self.tagLine.frame.origin.y + 300,
+                                            self.tagLine.frame.size.width,
+                                            self.tagLine.frame.size.height
+                                            );
+        } completion:^(BOOL finished){
+        }];
+        [self.buttonView popOut];
+        loginFormShown = YES;
+    }
 }
 
 - (void)showJoinForm {
