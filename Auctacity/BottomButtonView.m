@@ -10,11 +10,6 @@
 
 @implementation BottomButtonView
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    return self;
-}
-
 - (void)awakeFromNib {
     self.container = [[[NSBundle mainBundle] loadNibNamed:@"BottomButtonView" owner:self options:nil] objectAtIndex:0];
     [self addSubview:self.container];

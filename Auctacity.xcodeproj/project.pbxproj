@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784C1FF41A8DA2E5007FB04F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784C1FF31A8DA2E5007FB04F /* CoreData.framework */; };
+		7874E0E11A8DC9520099A3FA /* LoginFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874E0E01A8DC9520099A3FA /* LoginFormView.m */; };
+		78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C4F6A21A8DC73000704F14 /* LoginFormView.xib */; };
 		78D80E891A33C976005282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E881A33C976005282A3 /* main.m */; };
 		78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8B1A33C976005282A3 /* AppDelegate.m */; };
 		78D80E951A33C976005282A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D80E931A33C976005282A3 /* Main.storyboard */; };
@@ -32,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		784C1FF31A8DA2E5007FB04F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7874E0DF1A8DC9520099A3FA /* LoginFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginFormView.h; sourceTree = "<group>"; };
+		7874E0E01A8DC9520099A3FA /* LoginFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginFormView.m; sourceTree = "<group>"; };
+		78C4F6A21A8DC73000704F14 /* LoginFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginFormView.xib; sourceTree = "<group>"; };
 		78D80E831A33C976005282A3 /* Auctacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auctacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D80E871A33C976005282A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D80E881A33C976005282A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784C1FF41A8DA2E5007FB04F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,7 @@
 		78D80E7A1A33C976005282A3 = {
 			isa = PBXGroup;
 			children = (
+				784C1FF31A8DA2E5007FB04F /* CoreData.framework */,
 				78D80E851A33C976005282A3 /* Auctacity */,
 				78D80EA21A33C976005282A3 /* AuctacityTests */,
 				78D80E841A33C976005282A3 /* Products */,
@@ -103,6 +112,9 @@
 				78E246CA1A8B39D600ED6E0E /* BottomButtonView.h */,
 				78E246CB1A8B39D600ED6E0E /* BottomButtonView.m */,
 				78E246CD1A8B39F100ED6E0E /* BottomButtonView.xib */,
+				7874E0DF1A8DC9520099A3FA /* LoginFormView.h */,
+				7874E0E01A8DC9520099A3FA /* LoginFormView.m */,
+				78C4F6A21A8DC73000704F14 /* LoginFormView.xib */,
 				78D80E861A33C976005282A3 /* Supporting Files */,
 			);
 			path = Auctacity;
@@ -226,6 +238,7 @@
 			files = (
 				78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */,
 				78E246CE1A8B39F100ED6E0E /* BottomButtonView.xib in Resources */,
+				78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */,
 				78E246C91A8B268F00ED6E0E /* Museo700-Regular-webfont.ttf in Resources */,
 				78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */,
 				78D80E951A33C976005282A3 /* Main.storyboard in Resources */,
@@ -250,6 +263,7 @@
 			files = (
 				78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */,
 				78E246CC1A8B39D600ED6E0E /* BottomButtonView.m in Sources */,
+				7874E0E11A8DC9520099A3FA /* LoginFormView.m in Sources */,
 				78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */,
 				78D80E891A33C976005282A3 /* main.m in Sources */,
 			);

@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "BottomButtonView.h"
+#import "LoginFormView.h"
 
-@interface AuthViewController : UIViewController
+@interface AuthViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet BottomButtonView *buttonView;
 @property (strong, nonatomic) IBOutlet UIImageView *logo;
 @property (strong, nonatomic) IBOutlet UIImageView *shinyLip;
 @property (strong, nonatomic) IBOutlet UITextView *tagLine;
+
+@property (strong, nonatomic) LoginFormView *loginForm;
+@property (strong, nonatomic) UIView *joinForm;
 
 @end
