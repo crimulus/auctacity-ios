@@ -15,37 +15,66 @@
 @implementation AuthViewController
 
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
-    
-    [self.buttonView.leftButton setTitle:@"Log In" forState:UIControlStateNormal];
-    [self.buttonView.leftButton addTarget:self
-                                   action:@selector(toggleLoginForm)
-                         forControlEvents:UIControlEventTouchUpInside
-     ];
-    
-    [self.buttonView.rightButton setTitle:@"Sign Up" forState:UIControlStateNormal];
-    [self.buttonView.rightButton addTarget:self
-                                    action:@selector(toggleJoinForm)
-                          forControlEvents:UIControlEventTouchUpInside
-     ];
-    
-    [self.buttonView popIn];
-    
+    [self setButtons:@""];
+    self.tagLine.delegate = self;
+    self.buttonView.hidden = YES;
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    APIRequest *loginRequest = [APIRequest alloc];
+    if ([loginRequest loggedIn]) {
+        LoginFormView *loginForm = [LoginFormView alloc];
+        [loginForm logIn];
+
+    }
+    else {
+        self.buttonView.hidden = NO;
+        [self.buttonView popIn];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (void)setButtons:(NSString *)type {
+
+    NSString *leftText = @"Log In";
+    NSString *rightText = @"Sign Up";
+
+    SEL leftSelector = @selector(toggleLoginForm);
+    SEL rightSelector = @selector(toggleJoinForm);
+
+    if ([type isEqualToString:@"log in"]) {
+        leftText = @"Cancel";
+        leftSelector = @selector(toggleLoginForm);
+    }
+
+    [self.buttonView.leftButton setTitle:leftText forState:UIControlStateNormal];
+    [self.buttonView.leftButton addTarget:self
+                                   action:leftSelector
+                         forControlEvents:UIControlEventTouchUpInside
+     ];
+
+    [self.buttonView.rightButton setTitle:rightText forState:UIControlStateNormal];
+    [self.buttonView.rightButton addTarget:self
+                                    action:rightSelector
+                          forControlEvents:UIControlEventTouchUpInside
+     ];
+
+}
+
 - (void)toggleLoginForm {
     if (self.loginForm) {
-        
+
         [UIView animateWithDuration:.1 animations:^{
-            CGAffineTransform transform = CGAffineTransformMakeScale(1, .01);
+            CGAffineTransform transform = CGAffineTransformMakeScale(1, 0);
             self.loginForm.container.transform = transform;
         } completion:^(BOOL finished) {
-            
+
             [UIView animateWithDuration:.2 animations:^{
                 self.logo.frame = CGRectMake(
                                              self.logo.frame.origin.x,
@@ -69,28 +98,29 @@
                 [self.loginForm.container removeFromSuperview];
                 self.loginForm = nil;
             }];
-            
+
         }];
-        
+        [self setButtons:@""];
+
     }
     else {
-        
+
         self.loginForm = [[LoginFormView alloc] init];
         [self.loginForm awakeFromNib];
-        
+
         self.loginForm.container.frame = CGRectMake(
                                                     (self.view.frame.size.width / 2) - (self.loginForm.container.frame.size.width / 2),
-                                                    (self.view.frame.size.height / 2) - (self.loginForm.container.frame.size.height),
+                                                    (self.view.frame.size.height / 2) - 170,
                                                     self.loginForm.container.frame.size.width,
                                                     self.loginForm.container.frame.size.height
                                                     );
-        CGAffineTransform transform = CGAffineTransformMakeScale(1, .01);
+        CGAffineTransform transform = CGAffineTransformMakeScale(1, 0);
         self.loginForm.container.transform = transform;
-        
+
         [self.loginForm setDelegate:self];
         [self.view addSubview:self.loginForm.container];
         [self.loginForm.username becomeFirstResponder];
-        
+
         [UIView animateWithDuration:.2 animations:^{
             self.logo.frame = CGRectMake(
                                          self.logo.frame.origin.x,
@@ -117,22 +147,25 @@
             } completion:^(BOOL finished){
             }];
         }];
-        [self.buttonView popOut];
+        [self setButtons:@"log in"];
     }
 }
 
 - (void)toggleJoinForm {
     [self.buttonView popIn];
-    
+
 }
 
 /**
- Text Field delegate methods
+ Text view delegate methods
  */
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    return NO; // Otherwise you can "tab" from the input boxes to the tag line
+}
 
 /**
- End text Field delegate methods
+ End text view delegate methods
  */
-
 
 @end

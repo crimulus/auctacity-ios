@@ -10,7 +10,7 @@
 #import "BottomButtonView.h"
 #import "LoginFormView.h"
 
-@interface AuthViewController : UIViewController <UITextFieldDelegate>
+@interface AuthViewController : UIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet BottomButtonView *buttonView;
 @property (strong, nonatomic) IBOutlet UIImageView *logo;

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AuthViewController.h"
+#import "PrimaryTabController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +16,8 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self subscribeToNotifications];
     return YES;
 }
 
@@ -40,6 +41,54 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)subscribeToNotifications {
+
+    // Successful Login
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(successfulLogin:)
+                                                 name:@"SuccessfulLogin"
+                                               object:nil];
+
+    // Successful Logout
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(successfulLogout:)
+                                                 name:@"SuccessfulLogout"
+                                               object:nil];
+
+}
+
+- (void)successfulLogin:(NSNotification *)notification {
+
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PrimaryTabController *ptc = [sb instantiateViewControllerWithIdentifier:@"primaryTabController"];
+    ptc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+
+    [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
+        [self.window.rootViewController presentViewController:ptc
+                                                     animated:YES
+                                                   completion:^{
+                                                       [self.window setRootViewController:ptc];
+                                                   }];
+    }];
+
+}
+
+- (void)successfulLogout:(NSNotification *)notification {
+
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AuthViewController *avc = [sb instantiateViewControllerWithIdentifier:@"authViewController"];
+    avc.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+
+    [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
+        [self.window.rootViewController presentViewController:avc
+                                                     animated:YES
+                                                   completion:^{
+                                                       [self.window setRootViewController:avc];
+                                                   }];
+    }];
+
 }
 
 @end

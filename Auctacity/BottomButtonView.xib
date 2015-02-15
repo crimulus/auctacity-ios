@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonals" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-mU-6Hb">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="76"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-3M-Irp">
-                    <rect key="frame" x="17" y="16" width="118" height="43"/>
+                    <rect key="frame" x="8" y="18" width="141" height="39"/>
                     <fontDescription key="fontDescription" name="Museo-300" family="Museo" pointSize="25"/>
                     <state key="normal" title="Left" backgroundImage="red-button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +34,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06B-Zm-c9I">
-                    <rect key="frame" x="164" y="16" width="118" height="43"/>
+                    <rect key="frame" x="153" y="18" width="141" height="39"/>
                     <fontDescription key="fontDescription" name="Museo-300" family="Museo" pointSize="25"/>
                     <state key="normal" title="Right" backgroundImage="blue-button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
