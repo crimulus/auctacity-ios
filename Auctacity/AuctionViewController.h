@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BottomButtonView.h"
 
 @interface AuctionViewController : UIViewController
+
+@property (strong, atomic) NSDictionary *auction;
 
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 
@@ -38,6 +41,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *descLabel;
 @property (strong, nonatomic) IBOutlet UILabel *desc;
 
+@property (strong, nonatomic) IBOutlet BottomButtonView *buttonView;
 
 
 @end

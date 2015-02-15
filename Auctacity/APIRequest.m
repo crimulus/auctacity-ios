@@ -25,7 +25,6 @@
                         [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                         endpoint
                         ];
-    NSLog(@"%@", urlStr);
     NSURL *url = [[NSURL alloc] initWithString:urlStr];
     NSError *error;
     NSHTTPURLResponse *response;
@@ -71,7 +70,6 @@
 - (void)getCredentials {
     UICKeyChainStore *kc = [self keychain];
     username = [kc stringForKey:@"username"];
-    NSLog(@"GC: %@", username);
     password = [kc stringForKey:@"password"];
 }
 

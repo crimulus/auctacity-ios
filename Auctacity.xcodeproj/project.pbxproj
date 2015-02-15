@@ -17,8 +17,6 @@
 		788DF8C61A904C62007F8C63 /* AuctionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8C51A904C62007F8C63 /* AuctionsTableViewController.m */; };
 		788DF8CC1A906ACF007F8C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788DF8CB1A906ACF007F8C63 /* Main.storyboard */; };
 		788DF8CF1A906B86007F8C63 /* AuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8CE1A906B86007F8C63 /* AuctionViewController.m */; };
-		788DF8D21A90738A007F8C63 /* AuctionSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8D11A90738A007F8C63 /* AuctionSearchTableViewCell.m */; };
-		788DF8D41A9073CF007F8C63 /* AuctionSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788DF8D31A9073CF007F8C63 /* AuctionSearchTableViewCell.xib */; };
 		78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C4F6A21A8DC73000704F14 /* LoginFormView.xib */; };
 		78D80E891A33C976005282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E881A33C976005282A3 /* main.m */; };
 		78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8B1A33C976005282A3 /* AppDelegate.m */; };
@@ -60,9 +58,6 @@
 		788DF8CB1A906ACF007F8C63 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		788DF8CD1A906B86007F8C63 /* AuctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionViewController.h; sourceTree = "<group>"; };
 		788DF8CE1A906B86007F8C63 /* AuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionViewController.m; sourceTree = "<group>"; };
-		788DF8D01A90738A007F8C63 /* AuctionSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSearchTableViewCell.h; sourceTree = "<group>"; };
-		788DF8D11A90738A007F8C63 /* AuctionSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSearchTableViewCell.m; sourceTree = "<group>"; };
-		788DF8D31A9073CF007F8C63 /* AuctionSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuctionSearchTableViewCell.xib; sourceTree = "<group>"; };
 		78C4F6A21A8DC73000704F14 /* LoginFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginFormView.xib; sourceTree = "<group>"; };
 		78D80E831A33C976005282A3 /* Auctacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auctacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D80E871A33C976005282A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,9 +112,6 @@
 		788DF8C21A9047FC007F8C63 /* PrimaryTabController Views */ = {
 			isa = PBXGroup;
 			children = (
-				788DF8D01A90738A007F8C63 /* AuctionSearchTableViewCell.h */,
-				788DF8D11A90738A007F8C63 /* AuctionSearchTableViewCell.m */,
-				788DF8D31A9073CF007F8C63 /* AuctionSearchTableViewCell.xib */,
 				788DF8C41A904C62007F8C63 /* AuctionsTableViewController.h */,
 				788DF8C51A904C62007F8C63 /* AuctionsTableViewController.m */,
 				788DF8BF1A90378C007F8C63 /* SettingsViewController.h */,
@@ -310,7 +302,6 @@
 				788DF8CC1A906ACF007F8C63 /* Main.storyboard in Resources */,
 				78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */,
 				78E246CE1A8B39F100ED6E0E /* BottomButtonView.xib in Resources */,
-				788DF8D41A9073CF007F8C63 /* AuctionSearchTableViewCell.xib in Resources */,
 				78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */,
 				78E246C91A8B268F00ED6E0E /* Museo700-Regular-webfont.ttf in Resources */,
 				78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */,
@@ -339,7 +330,6 @@
 				788DF8CF1A906B86007F8C63 /* AuctionViewController.m in Sources */,
 				788DF8C11A90378C007F8C63 /* SettingsViewController.m in Sources */,
 				7874E0E11A8DC9520099A3FA /* LoginFormView.m in Sources */,
-				788DF8D21A90738A007F8C63 /* AuctionSearchTableViewCell.m in Sources */,
 				788DF8A51A900D10007F8C63 /* PrimaryTabController.m in Sources */,
 				78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */,
 				78D80E891A33C976005282A3 /* main.m in Sources */,
