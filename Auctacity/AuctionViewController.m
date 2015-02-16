@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.auction) {
+        self.name.text = [self.auction objectForKey:@"title"];
         self.seller.text = [self.auction objectForKey:@"userIdx"];
         [self performSelectorInBackground:@selector(fetchAuctionImage) withObject:nil];
 

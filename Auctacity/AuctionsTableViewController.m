@@ -51,10 +51,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"auctionSearch" forIndexPath:indexPath];
-    [self resizeAuctionImage:cell.imageView.image];
-
-    NSArray *matches = [sourceJSON objectForKey:@"matches"];
     NSDictionary *match = [matches objectAtIndex:indexPath.row];
+
+    cell.imageView.image = [self resizeAuctionImage:[UIImage imageNamed:@"auction-no-photo.png"]];
 
     cell.textLabel.numberOfLines = 2;
     cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@",
@@ -78,6 +77,7 @@
     [self performSelectorInBackground:@selector(fetchAuctionImage:) withObject:@[cell, match]];
 
     return cell;
+
 }
 
 - (void)fetchAuctionImage:(NSArray *)args {
@@ -85,20 +85,19 @@
     NSDictionary *match = args[1];
     NSURL *url = [NSURL URLWithString:[match objectForKey:@"imageUrl"]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    [self performSelectorOnMainThread:@selector(setAuctionImage:)
-                           withObject:@[cell, data]
-                        waitUntilDone:NO
-     ];
-}
+    UIImage *image = [self resizeAuctionImage:[UIImage imageWithData:data]];
+    dispatch_block_t block = ^{
+        cell.imageView.image = image;
+    };
+    dispatch_async(dispatch_get_main_queue(), block);
 
-- (void)setAuctionImage:(NSArray *)args {
-    UITableViewCell *cell = args[0];
-    NSData *data = args[1];
-    cell.imageView.image = [self resizeAuctionImage:[UIImage imageWithData:data]];
 }
 
 - (UIImage *)resizeAuctionImage:(UIImage *)baseImage {
-    CGSize newSize = CGSizeMake(320, 160);
+    return [self resizeAuctionImage:baseImage size:CGSizeMake(160, 80)];
+}
+
+- (UIImage *)resizeAuctionImage:(UIImage *)baseImage size:(CGSize)newSize {
     UIGraphicsBeginImageContext(newSize);
     [baseImage drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
