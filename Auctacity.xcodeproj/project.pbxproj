@@ -10,6 +10,7 @@
 		7808455D1A8FE40B00428053 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808455C1A8FE40B00428053 /* APIRequest.m */; };
 		784C1FF41A8DA2E5007FB04F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784C1FF31A8DA2E5007FB04F /* CoreData.framework */; };
 		7874E0E11A8DC9520099A3FA /* LoginFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7874E0E01A8DC9520099A3FA /* LoginFormView.m */; };
+		787E9C071A96E33E0030DE0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787E9C061A96E33E0030DE0B /* Images.xcassets */; };
 		788DF8A51A900D10007F8C63 /* PrimaryTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8A41A900D10007F8C63 /* PrimaryTabController.m */; };
 		788DF8AB1A9021B8007F8C63 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788DF8AA1A9021B8007F8C63 /* Security.framework */; };
 		788DF8BE1A902730007F8C63 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8BD1A902730007F8C63 /* UICKeyChainStore.m */; };
@@ -21,7 +22,6 @@
 		78D80E891A33C976005282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E881A33C976005282A3 /* main.m */; };
 		78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8B1A33C976005282A3 /* AppDelegate.m */; };
 		78D80EA61A33C976005282A3 /* AuctacityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80EA51A33C976005282A3 /* AuctacityTests.m */; };
-		78E246BC1A8AF85800ED6E0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E246BB1A8AF85800ED6E0E /* Images.xcassets */; };
 		78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78E246B81A8AF6A700ED6E0E /* KaushanScript-Regular-webfont.ttf */; };
 		78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E246C41A8B205800ED6E0E /* AuthViewController.m */; };
 		78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78E246C61A8B266300ED6E0E /* Museo300-Regular.otf */; };
@@ -46,6 +46,7 @@
 		784C1FF31A8DA2E5007FB04F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7874E0DF1A8DC9520099A3FA /* LoginFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginFormView.h; sourceTree = "<group>"; };
 		7874E0E01A8DC9520099A3FA /* LoginFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginFormView.m; sourceTree = "<group>"; };
+		787E9C061A96E33E0030DE0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		788DF8A31A900D10007F8C63 /* PrimaryTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryTabController.h; sourceTree = "<group>"; };
 		788DF8A41A900D10007F8C63 /* PrimaryTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryTabController.m; sourceTree = "<group>"; };
 		788DF8AA1A9021B8007F8C63 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -68,7 +69,6 @@
 		78D80EA41A33C976005282A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D80EA51A33C976005282A3 /* AuctacityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuctacityTests.m; sourceTree = "<group>"; };
 		78E246B81A8AF6A700ED6E0E /* KaushanScript-Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KaushanScript-Regular-webfont.ttf"; path = "../../Desktop/auctacity/KaushanScript-Regular-webfont.ttf"; sourceTree = "<group>"; };
-		78E246BB1A8AF85800ED6E0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		78E246C31A8B205800ED6E0E /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		78E246C41A8B205800ED6E0E /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		78E246C61A8B266300ED6E0E /* Museo300-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo300-Regular.otf"; path = "../../Desktop/auctacity/Museo300-Regular.otf"; sourceTree = "<group>"; };
@@ -175,10 +175,10 @@
 				788DF8A41A900D10007F8C63 /* PrimaryTabController.m */,
 				788DF8C21A9047FC007F8C63 /* PrimaryTabController Views */,
 				788DF8C71A90634A007F8C63 /* Object Views */,
-				78E246BB1A8AF85800ED6E0E /* Images.xcassets */,
 				78E246B41A8AF62D00ED6E0E /* Fonts */,
 				788DF8AC1A90232C007F8C63 /* Libraries */,
 				78D80E861A33C976005282A3 /* Supporting Files */,
+				787E9C061A96E33E0030DE0B /* Images.xcassets */,
 			);
 			path = Auctacity;
 			sourceTree = "<group>";
@@ -301,11 +301,11 @@
 			files = (
 				788DF8CC1A906ACF007F8C63 /* Main.storyboard in Resources */,
 				78E246C81A8B268F00ED6E0E /* Museo300-Regular.otf in Resources */,
+				787E9C071A96E33E0030DE0B /* Images.xcassets in Resources */,
 				78E246CE1A8B39F100ED6E0E /* BottomButtonView.xib in Resources */,
 				78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */,
 				78E246C91A8B268F00ED6E0E /* Museo700-Regular-webfont.ttf in Resources */,
 				78E246BD1A8AF92B00ED6E0E /* KaushanScript-Regular-webfont.ttf in Resources */,
-				78E246BC1A8AF85800ED6E0E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

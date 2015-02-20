@@ -47,8 +47,6 @@
 
 }
 - (NSDictionary *)requestAtEndpoint:(NSString *)endpoint username:(NSString *)u password:(NSString *)p {
-    //    username = u;   // For simulator
-    //    password = p;   // For simulator
     if (u != nil && p != nil) {
         [self saveCredentials:u password:p];
     }
