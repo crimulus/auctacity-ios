@@ -17,8 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.auction) {
+
+        self.detailsScrollView.contentSize = CGSizeMake(
+                                                        self.detailsScrollView.frame.size.width,
+                                                        1500
+                                                        );
+        [self.detailsScrollView setScrollEnabled:YES];
+
         self.name.text = [self.auction objectForKey:@"title"];
         self.seller.text = [self.auction objectForKey:@"userIdx"];
+
+        NSString *descText = [self.auction objectForKey:@"description"];
+        self.desc.frame = CGRectMake(self.desc.frame.origin.x,
+                                     self.desc.frame.origin.y,
+                                     self.desc.frame.size.width,
+                                     [self labelHeight:descText label:self.desc]
+                                     );
+
+        self.desc.numberOfLines = 0;
+        self.desc.lineBreakMode = NSLineBreakByWordWrapping;
+        self.desc.text = descText;
+
         [self performSelectorInBackground:@selector(fetchAuctionImage) withObject:nil];
 
         // Buttons -- to be expanded later
@@ -86,5 +105,16 @@
     return newImage;
 }
 
+- (CGFloat)labelHeight:(NSString *)labelText label:(UILabel *)label {
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          @"font", label.font,
+                                          nil];
+    CGRect expectedLabelSize = [labelText boundingRectWithSize:CGSizeMake(label.frame.size.width, 50000)
+                                                       options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                                    attributes:attributesDictionary
+                                                       context:nil
+                                ];
+    return expectedLabelSize.size.height*10;
+}
 
 @end

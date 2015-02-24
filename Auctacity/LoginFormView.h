@@ -11,6 +11,7 @@
 
 @interface LoginFormView : UIView <UITextFieldDelegate>
 
+@property (strong, nonatomic) UIViewController *viewController;
 @property (strong, nonatomic) IBOutlet UIView *container;
 
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 
-- (void)setDelegate:(id)delegate;
+- (void)setDelegates:(id)delegate;
 - (void)logIn;
 - (IBAction)loginButtonPressed:(id)sender;
 

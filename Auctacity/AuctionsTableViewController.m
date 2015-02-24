@@ -144,8 +144,10 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AuctionViewController *avc = [segue destinationViewController];
-    NSIndexPath *path = [self.tableView indexPathForCell:sender];
-    avc.auction = [matches objectAtIndex:path.row];
+    if ([[segue identifier] isEqualToString:@"auctionListToAuction"]) {
+        AuctionViewController *avc = [segue destinationViewController];
+        NSIndexPath *path = [self.tableView indexPathForCell:sender];
+        avc.auction = [matches objectAtIndex:path.row];
+    }
 }
 @end

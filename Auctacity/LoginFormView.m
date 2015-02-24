@@ -7,10 +7,11 @@
 //
 
 #import "LoginFormView.h"
-#import "PrimaryTabController.h"
 
 @implementation LoginFormView
 
+- (void)viewDidLoad {
+}
 - (void)awakeFromNib {
 
     [[[NSBundle mainBundle] loadNibNamed:@"LoginFormView" owner:self options:nil] objectAtIndex:0];
@@ -21,11 +22,11 @@
 
     [self.password addTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
 
-    [self setDelegate:self];
+    [self setDelegates:self];
 
 }
 
-- (void)setDelegate:(id)delegate {
+- (void)setDelegates:(id)delegate {
     self.username.delegate = delegate;
     self.password.delegate = delegate;
 }
@@ -73,10 +74,14 @@
         json = [[APIRequest alloc] requestAtEndpoint:@"user"];
     }
 
-    if ([json objectForKey:@"error"]) {
+    NSString *message = [json objectForKey:@"error"];
+    if (message) {
+        if ([[json objectForKey:@"code"] isEqualToString:@"-1012"]) { // Bad login
+            message = @"Invalid username/password";
+        }
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
-                                                        message:[json objectForKey:@"error"]
-                                                       delegate:nil
+                                                        message:message
+                                                       delegate:self.viewController
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil
                               ];
@@ -95,25 +100,5 @@
     if (valid) { [self logIn]; }
 }
 
-/**
- Text Field delegate methods
- */
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    NSLog(@"hi!");
-}
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"Did end editing");
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"return?");
-    [self resignFirstResponder];
-    return YES;
-}
-
-/**
- End text Field delegate methods
- */
 
 @end

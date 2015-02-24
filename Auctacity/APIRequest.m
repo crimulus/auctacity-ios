@@ -23,11 +23,10 @@
     NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@@www.auctacity.com/rest/%@/",
                         [username stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                         [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                        endpoint
-                        ];
+                        endpoint];
     NSURL *url = [[NSURL alloc] initWithString:urlStr];
     NSError *error;
-    NSHTTPURLResponse *response;
+    NSURLResponse *response;
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *data = [NSURLConnection sendSynchronousRequest:request
@@ -43,9 +42,13 @@
         if (!error) { return json; }
     }
 
-    return @{ @"error" : [NSString stringWithFormat:@"%@", error.localizedDescription] };
+    return @{
+             @"error" : [NSString stringWithFormat:@"%@", error.localizedDescription],
+             @"code" : [NSString stringWithFormat:@"%li", (long)error.code]
+    };
 
 }
+
 - (NSDictionary *)requestAtEndpoint:(NSString *)endpoint username:(NSString *)u password:(NSString *)p {
     if (u != nil && p != nil) {
         [self saveCredentials:u password:p];

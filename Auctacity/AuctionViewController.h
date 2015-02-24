@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *name;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *detailsScrollView;
+
 @property (strong, nonatomic) IBOutlet UILabel *sellerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *seller;
 

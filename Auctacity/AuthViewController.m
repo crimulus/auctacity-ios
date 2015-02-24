@@ -27,6 +27,7 @@
     APIRequest *loginRequest = [APIRequest alloc];
     if ([loginRequest loggedIn]) {
         LoginFormView *loginForm = [LoginFormView alloc];
+        loginForm.viewController = self;
         [loginForm logIn];
 
     }
@@ -117,7 +118,7 @@
         CGAffineTransform transform = CGAffineTransformMakeScale(1, 0);
         self.loginForm.container.transform = transform;
 
-        [self.loginForm setDelegate:self];
+        [self.loginForm setDelegates:self];
         [self.view addSubview:self.loginForm.container];
         [self.loginForm.username becomeFirstResponder];
 
@@ -166,6 +167,29 @@
 
 /**
  End text view delegate methods
+ */
+
+/**
+ Alert view delegate methods
+ */
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if ([alertView.title isEqualToString:@"Login Error"]) {
+        [[[APIRequest alloc] init] logOut];
+    }
+}
+
+- (void)alertViewCancel:(UIAlertView *)alertView {
+}
+
+/**
+ End alert view delegate methods
  */
 
 @end

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AuthViewController.h"
-#import "PrimaryTabController.h"
+#import "AuctionsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -62,14 +62,14 @@
 - (void)successfulLogin:(NSNotification *)notification {
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    PrimaryTabController *ptc = [sb instantiateViewControllerWithIdentifier:@"primaryTabController"];
-    ptc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    AuctionsTableViewController *atvc = [sb instantiateViewControllerWithIdentifier:@"auctionsTableViewController"];
+    atvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 
     [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
-        [self.window.rootViewController presentViewController:ptc
+        [self.window.rootViewController presentViewController:atvc
                                                      animated:YES
                                                    completion:^{
-                                                       [self.window setRootViewController:ptc];
+                                                       [self.window setRootViewController:atvc];
                                                    }];
     }];
 
