@@ -65,11 +65,12 @@
 }
 
 - (void)subscribe {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Subscribe!!!"
-                                                    message:@"Eventually, this will work"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Good to know"
-                                          otherButtonTitles:nil
+    NSString *message = @"I have read and fully understand all of the terms of this auction.";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Auction Subscription (1/7)"
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Yes, I Fully Understand", nil
                           ];
     [alert show];
 }
@@ -115,5 +116,68 @@
     return expectedLabelSize.size.height;
 }
 
+/**********************************
+ ** UIAlertView DELEGATE METHODS **
+ *********************************/
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"%@", alertView.title);
+    if ([alertView.title isEqualToString:@"Auction Subscription (7/7)"]) {
+
+    }
+    else if (buttonIndex == 1) {
+        NSString *message;
+        NSString *title;
+        NSString *action = @"I understand";
+        if ([alertView.title isEqualToString:@"Auction Subscription (1/7)"]) {
+            title = @"Auction Subscription (2/7)";
+            message = [NSString stringWithFormat:@"I am subscribing to an auction posted by %@.", [self.auction objectForKey:@"publicName"]];
+        }
+        else if ([alertView.title isEqualToString:@"Auction Subscription (2/7)"]) {
+            title = @"Auction Subscription (3/7)";
+            message = [NSString stringWithFormat:@"I must pick up my items in %@, %@ on the specified pickup dates, or I forfeit them WITHOUT refund (unless otherwise stated).",
+                       [self.auction objectForKey:@"locationCity"],
+                       [self.auction objectForKey:@"locationState"],
+                       nil
+                       ];
+        }
+        else if ([alertView.title isEqualToString:@"Auction Subscription (3/7)"]) {
+            title = @"Auction Subscription (4/7)";
+            NSLog(@"%@", self.auction);
+            message = [NSString stringWithFormat:@"Items I bid on are subject to a buyers premium of %@%% and sales tax of %@%% of my winning bids.",
+                       [self.auction objectForKey:@"buyersPremium"],
+                       [self.auction objectForKey:@"salesTax"],
+                       nil
+                       ];
+        }
+        else if ([alertView.title isEqualToString:@"Auction Subscription (4/7)"]) {
+            title = @"Auction Subscription (5/7)";
+            message = [NSString stringWithFormat:@"Lots in this auction are staggered to end every %@ seconds starting at the auction bidding end date and time.",
+                       [self.auction objectForKey:@"lotSeparationSeconds"],
+                       nil
+                       ];
+        }
+        else if ([alertView.title isEqualToString:@"Auction Subscription (5/7)"]) {
+            title = @"Auction Subscription (6/7)";
+            message = [NSString stringWithFormat:@"Bids placed on any lot within %@ of its closing time will extend the bidding window of that lot by %@.",
+                       [self.auction objectForKey:@"bidExtensionRange"],
+                       [self.auction objectForKey:@"bidExtensionLength"],
+                       nil
+                       ];
+        }
+        else if ([alertView.title isEqualToString:@"Auction Subscription (6/7)"]) {
+            title = @"Auction Subscription (7/7)";
+            message = @"I am expected to have a valid credit card on file with enough of a balance on it to pay for my winnings, or I could be banned from Auctacity.";
+            action = @"Subscribe me!";
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:action, nil
+                              ];
+        [alert show];
+
+    }
+}
 @end

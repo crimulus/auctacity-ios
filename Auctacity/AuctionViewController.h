@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BottomButtonView.h"
 
-@interface AuctionViewController : UIViewController
+@interface AuctionViewController : UIViewController <UIAlertViewDelegate>
 
 @property (strong, atomic) NSDictionary *auction;
 
