@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet BottomButtonView *buttonView;
 @property (strong, nonatomic) IBOutlet UIImageView *logo;
 @property (strong, nonatomic) IBOutlet UIImageView *shinyLip;
-@property (strong, nonatomic) IBOutlet UITextView *tagLine;
+@property (strong, nonatomic) IBOutlet UILabel *tagLine;
 
 @property (strong, nonatomic) LoginFormView *loginForm;
 @property (strong, nonatomic) UIView *joinForm;

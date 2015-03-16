@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Tharp, Jeremy. All rights reserved.
 //
 
-#import "AuctionsTableViewController.h"
+#import "LotsTableViewController.h"
 #import "APIRequest.h"
-#import "AuctionViewController.h"
+#import "LotViewController.h"
 
-@interface AuctionsTableViewController () {
+@interface LotsTableViewController () {
     NSDictionary *sourceJSON;
 }
 
 @end
 
-@implementation AuctionsTableViewController {
+@implementation LotsTableViewController {
     NSArray *matches;
 }
 
@@ -24,8 +24,10 @@
 
     [super viewDidLoad];
 
-    sourceJSON = [[APIRequest alloc] requestAtEndpoint:@"auction"];
+    sourceJSON = [[APIRequest alloc] requestAtEndpoint:@"lot"];
     matches = [sourceJSON objectForKey:@"matches"];
+
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"lotSearch"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,44 +52,46 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"auctionSearch" forIndexPath:indexPath];
-    NSDictionary *match = [matches objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lotSearch" forIndexPath:indexPath];
+    cell.textLabel.text=@"asdoqiweur";
+    NSLog(@"%@", indexPath);
+//    NSDictionary *match = [matches objectAtIndex:indexPath.row];
 
-    cell.imageView.image = [self resizeAuctionImage:[UIImage imageNamed:@"auction-no-photo.png"]];
+//
+    cell.imageView.image = [self resizeLotImage:[UIImage imageNamed:@"auction-no-photo.png"]];
+//
+//    cell.textLabel.numberOfLines = 2;
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@",
+//                           [match objectForKey:@"userIdx"],
+//                           [match objectForKey:@"title"],
+//                           nil
+//                           ];
+//
+//    cell.detailTextLabel.numberOfLines = 5;
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"\n\n%@ %@ %@, %@ %@\nEnds: %@",
+//                                 [match objectForKey:@"locationAddress1"],
+//                                 [match objectForKey:@"locationAddress2"],
+//                                 [match objectForKey:@"locationCity"],
+//                                 [match objectForKey:@"locationState"],
+//                                 [match objectForKey:@"locationPostalCode"],
+//                                 [match objectForKey:@"TS-BiddingEnd"],
+//                                 nil
+//                                 ];
+//
+//    // Configure the cell ... (fetch the image on a background thread)
 
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@",
-                           [match objectForKey:@"publicName"],
-                           [match objectForKey:@"title"],
-                           nil
-                           ];
-    cell.textLabel.numberOfLines = 0;
-
-    cell.detailTextLabel.numberOfLines = 0;
-
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@\n%@, %@ %@\nEnds: %@",
-                                 [match objectForKey:@"locationAddress1"],
-                                 [match objectForKey:@"locationAddress2"],
-                                 [match objectForKey:@"locationCity"],
-                                 [match objectForKey:@"locationState"],
-                                 [match objectForKey:@"locationPostalCode"],
-                                 [match objectForKey:@"TS-BiddingEnd-Friendly"],
-                                 nil
-                                 ];
-
-    // Configure the cell ... (fetch the image on a background thread)
-    [self performSelectorInBackground:@selector(fetchAuctionImage:) withObject:@[cell, match]];
+//    [self performSelectorInBackground:@selector(fetchLotImage:) withObject:@[cell, match]];
 
     return cell;
 
 }
 
-- (void)fetchAuctionImage:(NSArray *)args {
+- (void)fetchLotImage:(NSArray *)args {
     UITableViewCell *cell = args[0];
     NSDictionary *match = args[1];
     NSURL *url = [NSURL URLWithString:[match objectForKey:@"imageUrl"]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *image = [self resizeAuctionImage:[UIImage imageWithData:data]];
+    UIImage *image = [self resizeLotImage:[UIImage imageWithData:data]];
     dispatch_block_t block = ^{
         cell.imageView.image = image;
     };
@@ -95,11 +99,11 @@
 
 }
 
-- (UIImage *)resizeAuctionImage:(UIImage *)baseImage {
-    return [self resizeAuctionImage:baseImage size:CGSizeMake(110, 55)];
+- (UIImage *)resizeLotImage:(UIImage *)baseImage {
+    return [self resizeLotImage:baseImage size:CGSizeMake(160, 80)];
 }
 
-- (UIImage *)resizeAuctionImage:(UIImage *)baseImage size:(CGSize)newSize {
+- (UIImage *)resizeLotImage:(UIImage *)baseImage size:(CGSize)newSize {
     UIGraphicsBeginImageContext(newSize);
     [baseImage drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -147,9 +151,9 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"auctionListToAuction"]) {
-        AuctionViewController *avc = [segue destinationViewController];
+        LotViewController *lvc = [segue destinationViewController];
         NSIndexPath *path = [self.tableView indexPathForCell:sender];
-        avc.auction = [matches objectAtIndex:path.row];
+        lvc.lot = [matches objectAtIndex:path.row];
     }
 }
 @end

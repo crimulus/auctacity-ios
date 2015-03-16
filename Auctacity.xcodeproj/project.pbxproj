@@ -18,6 +18,8 @@
 		788DF8CC1A906ACF007F8C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788DF8CB1A906ACF007F8C63 /* Main.storyboard */; };
 		788DF8CF1A906B86007F8C63 /* AuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DF8CE1A906B86007F8C63 /* AuctionViewController.m */; };
 		78C4F6A31A8DC73000704F14 /* LoginFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C4F6A21A8DC73000704F14 /* LoginFormView.xib */; };
+		78CCE5C61AAE7BB000C6FDBE /* LotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCE5C51AAE7BB000C6FDBE /* LotsTableViewController.m */; };
+		78CCE5C91AAE7D3000C6FDBE /* LotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCE5C81AAE7D3000C6FDBE /* LotViewController.m */; };
 		78D80E891A33C976005282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E881A33C976005282A3 /* main.m */; };
 		78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80E8B1A33C976005282A3 /* AppDelegate.m */; };
 		78D80EA61A33C976005282A3 /* AuctacityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D80EA51A33C976005282A3 /* AuctacityTests.m */; };
@@ -57,6 +59,10 @@
 		788DF8CD1A906B86007F8C63 /* AuctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionViewController.h; sourceTree = "<group>"; };
 		788DF8CE1A906B86007F8C63 /* AuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionViewController.m; sourceTree = "<group>"; };
 		78C4F6A21A8DC73000704F14 /* LoginFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginFormView.xib; sourceTree = "<group>"; };
+		78CCE5C41AAE7BB000C6FDBE /* LotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotsTableViewController.h; sourceTree = "<group>"; };
+		78CCE5C51AAE7BB000C6FDBE /* LotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotsTableViewController.m; sourceTree = "<group>"; };
+		78CCE5C71AAE7D3000C6FDBE /* LotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotViewController.h; sourceTree = "<group>"; };
+		78CCE5C81AAE7D3000C6FDBE /* LotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotViewController.m; sourceTree = "<group>"; };
 		78D80E831A33C976005282A3 /* Auctacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auctacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D80E871A33C976005282A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D80E881A33C976005282A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,15 +112,17 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		788DF8C21A9047FC007F8C63 /* PrimaryTabController Views */ = {
+		788DF8C21A9047FC007F8C63 /* Table Views */ = {
 			isa = PBXGroup;
 			children = (
 				788DF8C41A904C62007F8C63 /* AuctionsTableViewController.h */,
 				788DF8C51A904C62007F8C63 /* AuctionsTableViewController.m */,
 				788DF8BF1A90378C007F8C63 /* SettingsViewController.h */,
 				788DF8C01A90378C007F8C63 /* SettingsViewController.m */,
+				78CCE5C41AAE7BB000C6FDBE /* LotsTableViewController.h */,
+				78CCE5C51AAE7BB000C6FDBE /* LotsTableViewController.m */,
 			);
-			name = "PrimaryTabController Views";
+			name = "Table Views";
 			sourceTree = "<group>";
 		};
 		788DF8C31A90482B007F8C63 /* General Views */ = {
@@ -135,6 +143,8 @@
 			children = (
 				788DF8CD1A906B86007F8C63 /* AuctionViewController.h */,
 				788DF8CE1A906B86007F8C63 /* AuctionViewController.m */,
+				78CCE5C71AAE7D3000C6FDBE /* LotViewController.h */,
+				78CCE5C81AAE7D3000C6FDBE /* LotViewController.m */,
 			);
 			name = "Object Views";
 			sourceTree = "<group>";
@@ -163,12 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				788DF8CB1A906ACF007F8C63 /* Main.storyboard */,
-				788DF8C31A90482B007F8C63 /* General Views */,
 				78D80E8A1A33C976005282A3 /* AppDelegate.h */,
 				78D80E8B1A33C976005282A3 /* AppDelegate.m */,
 				78E246C31A8B205800ED6E0E /* AuthViewController.h */,
 				78E246C41A8B205800ED6E0E /* AuthViewController.m */,
-				788DF8C21A9047FC007F8C63 /* PrimaryTabController Views */,
+				788DF8C31A90482B007F8C63 /* General Views */,
+				788DF8C21A9047FC007F8C63 /* Table Views */,
 				788DF8C71A90634A007F8C63 /* Object Views */,
 				78E246B41A8AF62D00ED6E0E /* Fonts */,
 				788DF8AC1A90232C007F8C63 /* Libraries */,
@@ -321,10 +331,12 @@
 				78D80E8C1A33C976005282A3 /* AppDelegate.m in Sources */,
 				78E246CC1A8B39D600ED6E0E /* BottomButtonView.m in Sources */,
 				7808455D1A8FE40B00428053 /* APIRequest.m in Sources */,
+				78CCE5C61AAE7BB000C6FDBE /* LotsTableViewController.m in Sources */,
 				788DF8C61A904C62007F8C63 /* AuctionsTableViewController.m in Sources */,
 				788DF8CF1A906B86007F8C63 /* AuctionViewController.m in Sources */,
 				788DF8C11A90378C007F8C63 /* SettingsViewController.m in Sources */,
 				7874E0E11A8DC9520099A3FA /* LoginFormView.m in Sources */,
+				78CCE5C91AAE7D3000C6FDBE /* LotViewController.m in Sources */,
 				78E246C51A8B205800ED6E0E /* AuthViewController.m in Sources */,
 				78D80E891A33C976005282A3 /* main.m in Sources */,
 				788DF8BE1A902730007F8C63 /* UICKeyChainStore.m in Sources */,

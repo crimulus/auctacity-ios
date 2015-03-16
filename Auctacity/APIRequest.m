@@ -15,15 +15,23 @@
     NSString *username;
     NSString *password;
 }
+//sourceJSON = [[APIRequest alloc] requestAtEndpoint:@"auction"];
+//matches = [sourceJSON objectForKey:@"matches"];
 
 - (NSDictionary *)requestAtEndpoint:(NSString *)endpoint {
+    return [self requestAtEndpoint:endpoint queryString:@""];
+}
+
+- (NSDictionary *)requestAtEndpoint:(NSString *)endpoint queryString:(NSString *)queryString {
 
     [self getCredentials];
 
-    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@@www.auctacity.com/rest/%@/",
+    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@@www.auctacity.com/rest/%@/%@",
                         [username stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                         [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                        endpoint];
+                        endpoint,
+                        queryString
+                        ];
     NSURL *url = [[NSURL alloc] initWithString:urlStr];
     NSError *error;
     NSURLResponse *response;

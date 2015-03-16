@@ -8,6 +8,8 @@
 
 #import "AuctionViewController.h"
 #import "BottomButtonView.h"
+#import "LotViewController.h"
+#import "LotsTableViewController.h"
 
 @interface AuctionViewController ()
 @end
@@ -18,12 +20,6 @@
     [super viewDidLoad];
     if (self.auction) {
 
-        self.detailsScrollView.contentSize = CGSizeMake(
-                                                        self.detailsScrollView.frame.size.width,
-                                                        1500
-                                                        );
-        [self.detailsScrollView setScrollEnabled:YES];
-
         self.name.text = [self.auction objectForKey:@"title"];
         self.seller.text = [self.auction objectForKey:@"userIdx"];
 
@@ -33,10 +29,14 @@
                                      self.desc.frame.size.width,
                                      [self labelHeight:descText label:self.desc]
                                      );
+        self.desc.text = [self.auction objectForKey:@"description"];
 
-        self.desc.numberOfLines = 0;
-        self.desc.lineBreakMode = NSLineBreakByWordWrapping;
-        self.desc.text = descText;
+        [self.detailsScrollView setScrollEnabled:YES];
+        [self.detailsScrollView setContentSize:CGSizeMake(
+                                                          self.view.frame.size.width,
+                                                          self.desc.frame.origin.y + [self labelHeight:self.desc.text label:self.desc] + 400
+                                                          )
+         ];
 
         [self performSelectorInBackground:@selector(fetchAuctionImage) withObject:nil];
 
@@ -49,7 +49,7 @@
 
         [self.buttonView.rightButton setTitle:@"View Lots" forState:UIControlStateNormal];
         [self.buttonView.rightButton addTarget:self
-                                        action:@selector(viewLots)
+                                        action:@selector(showAuctionLotList)
                               forControlEvents:UIControlEventTouchUpInside
          ];
         [self.buttonView popIn];
@@ -62,16 +62,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewLots {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"View Lots"
-                                                    message:@"Eventually, this will work"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Awww :("
-                                          otherButtonTitles:nil
-                          ];
-    [alert show];
 }
 
 - (void)subscribe {
@@ -92,6 +82,15 @@
      ];
 }
 
+- (void)showAuctionLotList {
+    LotsTableViewController *ltvc = [[LotsTableViewController alloc] init];
+    ltvc.searchParams = [NSString stringWithFormat:@"auctionIdx=%@",
+                         [self.auction objectForKey:@"idx"]
+                         ];
+    [self.navigationController pushViewController:ltvc animated:YES];
+    NSLog(@"asldfkjas");
+}
+
 - (void)setAuctionImage:(NSData *)data {
     self.image.image = [self resizeAuctionImage:[UIImage imageWithData:data]];
 }
@@ -106,15 +105,15 @@
 }
 
 - (CGFloat)labelHeight:(NSString *)labelText label:(UILabel *)label {
-    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          @"font", label.font,
-                                          nil];
-    CGRect expectedLabelSize = [labelText boundingRectWithSize:CGSizeMake(label.frame.size.width, 50000)
-                                                       options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                                    attributes:attributesDictionary
+    CGRect expectedLabelSize = [labelText boundingRectWithSize:CGSizeMake((int)label.frame.size.width, 5000)
+                                                       options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin
+                                                    attributes:@{
+                                                                 NSFontAttributeName: label.font
+                                                                 }
                                                        context:nil
                                 ];
-    return expectedLabelSize.size.height*10;
+    return expectedLabelSize.size.height;
 }
+
 
 @end
